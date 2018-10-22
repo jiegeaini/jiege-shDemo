@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ <hibernate-configuration>
+ 
+ 		<session-factory>
+
+		<property name="connection.username">root</property>
+		<property name="connection.url">jdbc:mysql://localhost/flymusic</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.password">8029160.0mgj</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+		<property name="format_sql">true</property>
+		<!-- 自动完成创建表 -->
+<!-- 		<property name="hibernate.hbm2ddl.auto">create</property> -->
+		<!-- 映射表和对象的关系xml -->
+		 <mapping class="com.fly.music.entity.Music" />
+		 <mapping class="com.fly.music.entity.Musicpage" />
+		 <mapping class="com.fly.music.entity.Musicpagecategory" />
+		 <mapping class="com.fly.music.entity.Singer" />
+		 <mapping class="com.fly.music.entity.Singercategory" />
+		 <mapping class="com.fly.music.entity.User" />
+	</session-factory>
+ 		
+ 
+ </hibernate-configuration>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+ <constant name="struts.multipart.maxSize" value="1000000000"/>
+	<package name = "aa" extends = "struts-default">
+	<interceptors>
+      <interceptor name="MyLogger" class="com.fly.music.incterpter.Incterpter"></interceptor>
+    </interceptors>
+		<action name="getMusic" class="com.fly.music.action.GetMusic">
+			<interceptor-ref name="MyLogger"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="H_MusicAdd" class="com.fly.music.action.H_MusicAdd">
+			<interceptor-ref name="MyLogger"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="UploadAction" class="com.fly.music.action.UploadAction">
+			<interceptor-ref name="MyLogger"></interceptor-ref>
+            <interceptor-ref name="defaultStack">
+          <param name="allowedTypes">audio/x-mpeg</param>
+            </interceptor-ref>
+             <result>/success.jsp</result>
+            <!-- 出现错误自动会返回input结果，进入结果视图 -->
+            <result name="input" >/error.jsp</result>
+		</action>
+		<action name="UpdateAction" class="com.fly.music.action.UpdateAction">
+			<interceptor-ref name="MyLogger"></interceptor-ref>
+            <interceptor-ref name="defaultStack">
+          <param name="allowedTypes">audio/x-mpeg</param>
+            </interceptor-ref>
+             <result>/success.jsp</result>
+            <!-- 出现错误自动会返回input结果，进入结果视图 -->
+            <result name="input" >/error.jsp</result>
+		</action>
+		
+		
+<!-- 		邓力凡 -->
+	<action name="UserAction" class="com.fly.music.action.UserAction">
+			
+		</action>
+		
+<!-- 		马瑞超 -->
+<action name="loadSinger" class="com.fly.music.action.LoadSinger"></action>
+
+<!-- 周涛 -->
+<action name="GetPage" class = "com.fly.music.action.GetPage"></action>
+	</package>
+</struts>
